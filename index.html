@@ -249,6 +249,91 @@ ul.clean-list li::before {
   background: currentColor;
   opacity: 0.6;
 }
+
+/* ============================================================
+   PDF export button (visible on the thank-you slide)
+   ============================================================ */
+.pdf-export-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 32px;
+  background: rgba(95,237,131,0.12);
+  border: 1px solid rgba(95,237,131,0.4);
+  border-radius: 12px;
+  color: var(--tool-accent);
+  font-family: var(--font-mono);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+.pdf-export-btn:hover {
+  background: rgba(95,237,131,0.22);
+  border-color: rgba(95,237,131,0.65);
+  transform: translateY(-2px);
+}
+.pdf-export-btn:active { transform: translateY(0); }
+.pdf-export-btn svg { flex-shrink: 0; }
+
+/* ============================================================
+   Print / "Save as PDF" — each slide becomes one 1920×1080 page
+   ============================================================ */
+@media print {
+  @page {
+    size: 1920px 1080px;
+    margin: 0;
+  }
+
+  html, body {
+    background: #0a0d0c !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 1920px !important;
+  }
+
+  deck-stage {
+    display: block !important;
+    position: static !important;
+    width: 1920px !important;
+    height: auto !important;
+    transform: none !important;
+    overflow: visible !important;
+  }
+
+  deck-stage section {
+    display: block !important;
+    position: relative !important;
+    width: 1920px !important;
+    height: 1080px !important;
+    transform: none !important;
+    overflow: hidden !important;
+    page-break-after: always;
+    break-after: page;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  deck-stage section:last-of-type {
+    page-break-after: auto;
+    break-after: auto;
+  }
+
+  /* Hide UI chrome that shouldn't appear in the PDF */
+  .pdf-export-btn,
+  .pdf-export-row,
+  .tweaks-panel,
+  [data-tweaks-panel] {
+    display: none !important;
+  }
+
+  /* Honor deck colors in the printed PDF */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}
 </style>
 </head>
 <body>
@@ -1105,8 +1190,18 @@ ul.clean-list li::before {
       </div>
     </div>
 
-    <div class="t-small" style="font-size:24px; margin-top:48px; color:#8CF2A9; font-family:var(--font-mono); letter-spacing:0.04em;">
-      We're around after. Come find us.
+    <div class="pdf-export-row" style="margin-top:48px; display:flex; align-items:center; justify-content:space-between; gap:32px; flex-wrap:wrap;">
+      <div class="t-small" style="font-size:24px; color:#8CF2A9; font-family:var(--font-mono); letter-spacing:0.04em;">
+        We're around after. Come find us.
+      </div>
+      <button type="button" class="pdf-export-btn" onclick="window.print()" aria-label="Download this deck as a PDF">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="7 10 12 15 17 10"/>
+          <line x1="12" y1="15" x2="12" y2="3"/>
+        </svg>
+        <span>Download deck as PDF</span>
+      </button>
     </div>
   </div>
   <div class="footer" style="color:rgba(140,242,169,0.45)"><span>23 / 24</span><span>EKO · MIA · 2026</span></div>

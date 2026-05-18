@@ -1,0 +1,329 @@
+/*
+  GitHub Design System — slim font set (only weights used by the deck)
+*/
+
+/* Mona Sans — body (Regular, Medium, SemiBold, Bold) */
+@font-face { font-family:'Mona Sans'; src:url('fonts/MonaSans-Regular.ttf') format('truetype'); font-weight:400; font-style:normal; font-stretch:100%; font-display:swap; }
+@font-face { font-family:'Mona Sans'; src:url('fonts/MonaSans-Medium.ttf') format('truetype'); font-weight:500; font-style:normal; font-stretch:100%; font-display:swap; }
+@font-face { font-family:'Mona Sans'; src:url('fonts/MonaSans-SemiBold.ttf') format('truetype'); font-weight:600; font-style:normal; font-stretch:100%; font-display:swap; }
+@font-face { font-family:'Mona Sans'; src:url('fonts/MonaSans-Bold.ttf') format('truetype'); font-weight:700; font-style:normal; font-stretch:100%; font-display:swap; }
+
+/* Mona Sans Display — headlines (Light, Regular, Medium, SemiBold, Bold, ExtraBold, Black) at 100% AND 125% (expanded) */
+@font-face { font-family:'Mona Sans Display'; src:url('fonts/MonaSansDisplay-Light.ttf') format('truetype'); font-weight:300; font-style:normal; font-stretch:100%; font-display:swap; }
+@font-face { font-family:'Mona Sans Display'; src:url('fonts/MonaSansDisplay-Regular.ttf') format('truetype'); font-weight:400; font-style:normal; font-stretch:100%; font-display:swap; }
+@font-face { font-family:'Mona Sans Display'; src:url('fonts/MonaSansDisplay-Bold.ttf') format('truetype'); font-weight:700; font-style:normal; font-stretch:100%; font-display:swap; }
+@font-face { font-family:'Mona Sans Display'; src:url('fonts/MonaSansDisplay-ExtraBold.ttf') format('truetype'); font-weight:800; font-style:normal; font-stretch:100%; font-display:swap; }
+@font-face { font-family:'Mona Sans Display'; src:url('fonts/MonaSansDisplay-Black.ttf') format('truetype'); font-weight:900; font-style:normal; font-stretch:100%; font-display:swap; }
+@font-face { font-family:'Mona Sans Display'; src:url('fonts/MonaSansDisplayExpanded-Regular.ttf') format('truetype'); font-weight:400; font-style:normal; font-stretch:125%; font-display:swap; }
+@font-face { font-family:'Mona Sans Display'; src:url('fonts/MonaSansDisplayExpanded-Light.ttf') format('truetype'); font-weight:300; font-style:normal; font-stretch:125%; font-display:swap; }
+@font-face { font-family:'Mona Sans Display'; src:url('fonts/MonaSansDisplayExpanded-Bold.ttf') format('truetype'); font-weight:700; font-style:normal; font-stretch:125%; font-display:swap; }
+@font-face { font-family:'Mona Sans Display'; src:url('fonts/MonaSansDisplayExpanded-ExtraBold.ttf') format('truetype'); font-weight:800; font-style:normal; font-stretch:125%; font-display:swap; }
+@font-face { font-family:'Mona Sans Display'; src:url('fonts/MonaSansDisplayExpanded-Black.ttf') format('truetype'); font-weight:900; font-style:normal; font-stretch:125%; font-display:swap; }
+
+/* Mona Sans Mono — code / data */
+@font-face { font-family:'Mona Sans Mono'; src:url('fonts/MonaSansMono-Regular.ttf') format('truetype'); font-weight:400; font-style:normal; font-display:swap; }
+@font-face { font-family:'Mona Sans Mono'; src:url('fonts/MonaSansMono-Medium.ttf') format('truetype'); font-weight:500; font-style:normal; font-display:swap; }
+@font-face { font-family:'Mona Sans Mono'; src:url('fonts/MonaSansMono-Bold.ttf') format('truetype'); font-weight:700; font-style:normal; font-display:swap; }
+
+/* ============================================================
+   COLOR TOKENS — BASE PALETTE
+   ============================================================ */
+
+:root {
+  /* --- Neutrals --- */
+  --gh-white:   #FFFFFF;
+  --gh-black:   #000000;
+  --gh-gray-1:  #F2F5F3;
+  --gh-gray-2:  #E4EBE6;
+  --gh-gray-3:  #B6BFB8;
+  --gh-gray-4:  #909692;
+  --gh-gray-5:  #232925;
+  --gh-gray-6:  #101411;
+
+  /* --- Green (DevEx / Default) --- */
+  --gh-green-1: #BFFFD1;
+  --gh-green-2: #8CF2A9;
+  --gh-green-3: #5FED83;
+  --gh-green-4: #0FBF3E;
+  --gh-green-5: #0E6836;
+  --gh-green-6: #0A241B;
+
+  /* --- Pink (Copilot accent) --- */
+  --gh-pink-1:  #FFC9F2;
+  --gh-pink-2:  #FF80D2;
+  --gh-pink-3:  #FF4AC0;
+  --gh-pink-4:  #CA2186;
+  --gh-pink-5:  #952866;
+  --gh-pink-6:  #30081F;
+
+  /* --- Purple (Copilot brand) --- */
+  --gh-purple-1: #C898FD;
+  --gh-purple-2: #B870FF;
+  --gh-purple-3: #8534F3;
+  --gh-purple-4: #43179E;
+  --gh-purple-5: #26115F;
+  --gh-purple-6: #160048;
+
+  /* --- Orange (Security accent) --- */
+  --gh-orange-1: #F4A876;
+  --gh-orange-2: #F08A3A;
+  --gh-orange-3: #FE4C25;
+  --gh-orange-4: #C53211;
+  --gh-orange-5: #801E0F;
+  --gh-orange-6: #500A00;
+
+  /* --- Blue (Security brand) --- */
+  --gh-blue-1: #9EECFF;
+  --gh-blue-2: #3094FF;
+  --gh-blue-3: #1A61FE;
+  --gh-blue-4: #0527FC;
+  --gh-blue-5: #212183;
+  --gh-blue-6: #001C4D;
+
+  /* --- Lime (DevEx accent) --- */
+  --gh-lime-1: #DCFF96;
+  --gh-lime-2: #D3FA37;
+  --gh-lime-3: #D8BD0E;
+  --gh-lime-4: #C08600;
+  --gh-lime-5: #DA7210;
+  --gh-lime-6: #703100;
+
+  /* ============================================================
+     SEMANTIC COLORS — DARK MODE (default)
+     ============================================================ */
+
+  /* Backgrounds */
+  --bg-base:          var(--gh-gray-6);      /* #101411 — near black green */
+  --bg-elevated:      var(--gh-gray-5);      /* #232925 */
+  --bg-overlay:       rgba(255,255,255,0.06);
+
+  /* Foreground / Text */
+  --fg-primary:       var(--gh-white);
+  --fg-secondary:     #B0BAC3;               /* de-emphasis */
+  --fg-tertiary:      #7B8C9B;               /* even lighter */
+  --fg-emphasis:      var(--gh-green-3);     /* #5FED83 bright green */
+  --fg-emphasis-alt:  var(--gh-white);
+
+  /* Borders */
+  --border-default:   rgba(255,255,255,0.12);
+  --border-muted:     rgba(255,255,255,0.06);
+
+  /* Accents */
+  --accent-primary:   var(--gh-green-3);     /* #5FED83 */
+  --accent-hero:      var(--gh-green-4);     /* #0FBF3E */
+
+  /* Sub-brand accents */
+  --accent-copilot-primary: var(--gh-pink-3);   /* #FF4AC0 */
+  --accent-copilot-secondary: var(--gh-purple-2); /* #B870FF */
+  --accent-security-primary: var(--gh-blue-2);   /* #3094FF */
+  --accent-security-secondary: var(--gh-orange-3); /* #FE4C25 */
+  --accent-devex-primary: var(--gh-green-3);
+  --accent-devex-secondary: var(--gh-lime-2);    /* #D3FA37 */
+
+  /* ============================================================
+     TYPOGRAPHY TOKENS
+     ============================================================ */
+
+  /* Font families */
+  --font-sans:    'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Mona Sans Display', 'Mona Sans', sans-serif;
+  --font-mono:    'Mona Sans Mono', 'Monaspace Neon', ui-monospace, monospace;
+  --font-code:    'Monaspace Neon', 'Mona Sans Mono', ui-monospace, monospace;
+
+  /* Font weights */
+  --fw-regular: 400;
+  --fw-medium:  500;
+  --fw-semibold: 600;
+  --fw-bold:    700;
+  --fw-extrabold: 800;
+
+  /* Font stretch — Display uses expanded width */
+  --stretch-normal:  100%;
+  --stretch-display: 125%;
+  --stretch-condensed: 87.5%;
+
+  /* Type scale — relative to 16px base */
+  --text-xs:   12px;   /* minimum — data/mono */
+  --text-sm:   14px;   /* description */
+  --text-base: 16px;   /* statement */
+  --text-lg:   18px;   /* statement emphasis */
+  --text-xl:   20px;   /* small title */
+  --text-2xl:  24px;
+  --text-3xl:  32px;   /* medium title */
+  --text-4xl:  40px;
+  --text-5xl:  48px;   /* large title */
+  --text-6xl:  64px;
+  --text-7xl:  80px;   /* XL title */
+
+  /* Line heights */
+  --lh-tight:  1.1;
+  --lh-snug:   1.2;
+  --lh-normal: 1.5;
+  --lh-relaxed: 1.6;
+
+  /* Letter spacing */
+  --ls-tight:  -0.02em;
+  --ls-display: -0.03em;
+  --ls-mono:   0.01em;
+
+  /* ============================================================
+     SPACING TOKENS
+     ============================================================ */
+
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  /* ============================================================
+     RADIUS TOKENS
+     ============================================================ */
+
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:   12px;
+  --radius-xl:   16px;
+  --radius-2xl:  20px;
+  --radius-icon: 22%;   /* icon container squircle feel */
+  --radius-pill: 999px;
+
+  /* ============================================================
+     SHADOWS / ELEVATION
+     ============================================================ */
+
+  --shadow-sm:  0 1px 3px rgba(0,0,0,0.4);
+  --shadow-md:  0 4px 16px rgba(0,0,0,0.5);
+  --shadow-lg:  0 8px 32px rgba(0,0,0,0.6);
+  --shadow-glow-green:  0 0 24px rgba(95,237,131,0.35);
+  --shadow-glow-purple: 0 0 24px rgba(184,112,255,0.35);
+  --shadow-glow-blue:   0 0 24px rgba(48,148,255,0.35);
+}
+
+/* ============================================================
+   LIGHT MODE OVERRIDES
+   ============================================================ */
+
+[data-theme="light"] {
+  --bg-base:     var(--gh-white);
+  --bg-elevated: var(--gh-gray-1);
+  --fg-primary:  var(--gh-black);
+  --fg-secondary: #7B8C9B;
+  --fg-emphasis:  var(--gh-green-4);  /* #0FBF3E */
+  --accent-primary: var(--gh-green-4);
+  --accent-hero:  var(--gh-black);
+  --border-default: rgba(0,0,0,0.1);
+}
+
+/* ============================================================
+   SEMANTIC TYPOGRAPHIC ELEMENTS
+   ============================================================ */
+
+.gh-h1, h1.gh {
+  font-family: var(--font-sans);
+  font-size: var(--text-7xl);
+  font-weight: var(--fw-bold);
+  font-stretch: var(--stretch-display);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-display);
+  color: var(--fg-primary);
+}
+
+.gh-h2, h2.gh {
+  font-family: var(--font-sans);
+  font-size: var(--text-5xl);
+  font-weight: var(--fw-bold);
+  font-stretch: var(--stretch-display);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-display);
+  color: var(--fg-primary);
+}
+
+.gh-h3, h3.gh {
+  font-family: var(--font-sans);
+  font-size: var(--text-3xl);
+  font-weight: var(--fw-semibold);
+  font-stretch: var(--stretch-display);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--ls-tight);
+  color: var(--fg-primary);
+}
+
+.gh-h4, h4.gh {
+  font-family: var(--font-sans);
+  font-size: var(--text-xl);
+  font-weight: var(--fw-medium);
+  line-height: var(--lh-snug);
+  color: var(--fg-primary);
+}
+
+.gh-statement {
+  font-family: var(--font-sans);
+  font-size: var(--text-lg);
+  font-weight: var(--fw-medium);
+  line-height: var(--lh-normal);
+  color: var(--fg-primary);
+}
+
+.gh-body {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-relaxed);
+  color: var(--fg-secondary);
+}
+
+.gh-mono {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: var(--fw-regular);
+  letter-spacing: var(--ls-mono);
+  font-variant-numeric: tabular-nums;
+  color: var(--fg-primary);
+}
+
+.gh-label {
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-tertiary);
+}
+
+.gh-emphasis {
+  color: var(--fg-emphasis);
+}
+
+/* ============================================================
+   PIXEL GRAIN BACKGROUND UTILITY
+   Creates the signature GitHub halftone dot-grid pattern in CSS
+   ============================================================ */
+
+.gh-grain-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.gh-grain-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, currentColor 1px, transparent 1px);
+  background-size: 6px 6px;
+  opacity: 0.12;
+  pointer-events: none;
+  mask-image: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 60%);
+  -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 60%);
+}
+
+.gh-grain-green  { background: linear-gradient(180deg, var(--gh-green-6) 0%, var(--gh-gray-6) 100%); color: var(--gh-green-5); }
+.gh-grain-purple { background: linear-gradient(180deg, var(--gh-purple-6) 0%, #0d0020 100%); color: var(--gh-purple-4); }
+.gh-grain-blue   { background: linear-gradient(180deg, var(--gh-blue-6) 0%, #00060f 100%); color: var(--gh-blue-5); }
